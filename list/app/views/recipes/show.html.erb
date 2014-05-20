@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @recipe.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recipe.description %>
+</p>
+
+<tbody>
+    <% @recipe.steps.each do |step| %>
+      <tr>
+        <td><%= step.title %></td>
+        <td><%= step.description %></td>
+        <td><%= step.recipe_id %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<%= link_to 'Add Step', new_recipe_step_path(@recipe) %>
+<%= link_to 'Edit', edit_recipe_path(@recipe) %>
+<%= link_to 'Back', recipes_path %>
