@@ -16,5 +16,6 @@
 </p>
 
 <%= link_to 'Edit', edit_recipe_step_path(@recipe, @step) %>
+<%= link_to 'All Steps', recipe_steps_path(@recipe, @step) %>
 <%= link_to 'Add Step', new_recipe_step_path(@recipe) %>
 <%= link_to 'Back', recipes_path %>

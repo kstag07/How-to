@@ -17,7 +17,7 @@
         <td><%= step.description %></td>
         <td><%= step.recipe_id %></td>
         <td><%= link_to 'Show', recipe_step_path %></td>
-        <td><%= link_to 'Edit', edit_recipe_step_path(step) %></td>
+        <td><%= link_to 'Edit', edit_recipe_step_path(recipe, step) %></td>
         <td><%= link_to 'Destroy', recipe_step_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

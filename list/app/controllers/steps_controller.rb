@@ -1,6 +1,7 @@
 class StepsController < ApplicationController
-  before_action :find_recipe
   before_action :set_step, only: [:show, :edit, :update, :destroy]
+  before_action :find_recipe
+
   # GET /steps
   # GET /steps.json
   def index
@@ -10,6 +11,7 @@ class StepsController < ApplicationController
   # GET /steps/1
   # GET /steps/1.json
   def show
+    @step = Step.find(params[:id])
   end
 
   # GET /steps/new
@@ -40,10 +42,10 @@ class StepsController < ApplicationController
   # PATCH/PUT /steps/1
   # PATCH/PUT /steps/1.json
   def update
-    @step = @recipe.steps.update(step_params)
+    #@step = @recipe.steps.update(step_params)
     respond_to do |format|
       if @step.update(step_params)
-        format.html { redirect_to @step, notice: 'Step was successfully updated.' }
+        format.html { redirect_to [@recipe, @step], notice: 'Step was successfully updated.' }
         format.json { render :show, status: :ok, location: @step }
       else
         format.html { render :edit }
